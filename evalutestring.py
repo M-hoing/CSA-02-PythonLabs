@@ -10,7 +10,15 @@
 # Notes a hyphen will separate the two letters in the string.
 
 alphabet = "abcdefghijklmnopqrstuvwxyz"
-
 user_range = input("Enter a range of letters (e.g., a-z): ")
+
+
+start_letter, end_letter = user_range.split("-")
+start_alphabet = alphabet.index(start_letter.lower())
+end_alphabet = alphabet.index(end_letter.lower())
+
+result_string = alphabet[start_alphabet:end_alphabet + 1]
+
+result_string = result_string.upper() * start_letter.isupper() + result_string.lower() * start_letter.islower()
 
 print(result_string)
